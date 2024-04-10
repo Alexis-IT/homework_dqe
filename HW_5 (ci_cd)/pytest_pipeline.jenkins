@@ -1,7 +1,7 @@
 pipeline {
         agent any
     stages {
-	stage('Build') {
+    	stage('Build') {
                 	steps {
 	                    echo 'Start build pipeline'
                 }
@@ -18,10 +18,10 @@ pipeline {
 		            sh 'pytest test_cases.py'
                 }
             }
-        }
-    stage('Finish') {
-        steps {
-                echo 'Finish'
-            }
-        }
+   stage('Finish') {
+       steps {
+               echo 'Finish'
+           }
+       }
+   }
 }
