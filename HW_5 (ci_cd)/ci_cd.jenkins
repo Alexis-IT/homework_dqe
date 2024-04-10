@@ -6,7 +6,7 @@ pipeline {
                 script {
                         def qaBranchExists = sh(script: 'git show-ref --verify --quiet refs/heads/qa', returnStatus: true)
                         if (!qaBranchExists) {
-                            sh git branch --list
+                            sh 'git branch --list'
                             echo 'Створення гілки qa...'
                             sh 'git checkout -b qa'
                             sh 'git push origin qa'
