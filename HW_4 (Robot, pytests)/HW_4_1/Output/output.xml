@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.8 on win32)" generated="2024-03-24T17:38:52.716867" rpa="false" schemaversion="5">
+<suite id="s1" name="Main Part" source="C:\Users\Oleksandra_Bereza\Downloads\DQE Mentoring\L4 automation\HW_4_1\MainPart\main_part.robot">
+<kw name="Create Connection And Set As Variable" type="SETUP">
+<kw name="Connect To Database Full Way" owner="CustomFunctions">
+<msg time="2024-03-24T17:38:52.783903" level="INFO">Attempting to connect to EPUALVIW0AC0\SQLEXPRESS with user oleksandraLogin
+Successfully connected to the database</msg>
+<msg time="2024-03-24T17:38:52.783903" level="INFO">${cursor} = &lt;pyodbc.Cursor object at 0x0000020D18444430&gt;</msg>
+<var>${cursor}</var>
+<arg>${DBHost}</arg>
+<arg>${DBName}</arg>
+<arg>${DBUser}</arg>
+<arg>${DBPass}</arg>
+<arg>${DBDriver}</arg>
+<status status="PASS" start="2024-03-24T17:38:52.752705" elapsed="0.031198"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-03-24T17:38:52.783903" level="INFO">${cursor} = &lt;pyodbc.Cursor object at 0x0000020D18444430&gt;</msg>
+<arg>${cursor}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-03-24T17:38:52.783903" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-03-24T17:38:52.752705" elapsed="0.031198"/>
+</kw>
+<test id="s1-t1" name="No key duplicates in [hr].[employees]" line="16">
+<kw name="Execute Sql Query" owner="CustomFunctions">
+<msg time="2024-03-24T17:38:52.799524" level="INFO">${result} = []</msg>
+<var>${result}</var>
+<arg>${cursor}</arg>
+<arg>${HR_EMP_DUPLICATE}</arg>
+<status status="PASS" start="2024-03-24T17:38:52.799524" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2024-03-24T17:38:52.799524" level="INFO">Length is 0.</msg>
+<arg>${result}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="PASS" start="2024-03-24T17:38:52.799524" elapsed="0.000000"/>
+</kw>
+<doc>*Description:*
+     Verify that keys in the table [hr].[employees] are unique</doc>
+<tag>Uniqueness; Employees</tag>
+<status status="PASS" start="2024-03-24T17:38:52.799524" elapsed="0.000000"/>
+</test>
+<test id="s1-t2" name="Check salary range [hr].[employees]" line="25">
+<kw name="Execute Sql Query" owner="CustomFunctions">
+<msg time="2024-03-24T17:38:52.799524" level="INFO">${result} = []</msg>
+<var>${result}</var>
+<arg>${cursor}</arg>
+<arg>${HR_EMP_SALARY_RANGE_CHECK}</arg>
+<status status="PASS" start="2024-03-24T17:38:52.799524" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2024-03-24T17:38:52.799524" level="INFO">Length is 0.</msg>
+<arg>${result}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="PASS" start="2024-03-24T17:38:52.799524" elapsed="0.000000"/>
+</kw>
+<doc>*Description:*
+    Verify that salary for each emploees are in range [min_salary; max_salary]
+    which mentioned in table [hr].[jobs].</doc>
+<tag>Salary</tag>
+<tag>Validity</tag>
+<status status="PASS" start="2024-03-24T17:38:52.799524" elapsed="0.000000"/>
+</test>
+<test id="s1-t3" name="Check NULL values in all columns in [hr].[jobs]" line="35">
+<kw name="Execute Sql Query" owner="CustomFunctions">
+<msg time="2024-03-24T17:38:52.799524" level="INFO">${result} = []</msg>
+<var>${result}</var>
+<arg>${cursor}</arg>
+<arg>${HR_JOB_NULL_VALUES}</arg>
+<status status="PASS" start="2024-03-24T17:38:52.799524" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2024-03-24T17:38:52.799524" level="INFO">Length is 0.</msg>
+<arg>${result}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="PASS" start="2024-03-24T17:38:52.799524" elapsed="0.000000"/>
+</kw>
+<doc>*Description:*
+    Verify that all columns in [hr].[jobs] do not contain NULL values.</doc>
+<tag>Compleatnes</tag>
+<tag>Jobs</tag>
+<tag>NULL values</tag>
+<status status="PASS" start="2024-03-24T17:38:52.799524" elapsed="0.000000"/>
+</test>
+<test id="s1-t4" name="Check difference between min and max salary in [hr].[jobs]" line="44">
+<kw name="Execute Sql Query" owner="CustomFunctions">
+<msg time="2024-03-24T17:38:52.799524" level="INFO">${result} = []</msg>
+<var>${result}</var>
+<arg>${cursor}</arg>
+<arg>${HR_JOB_SALARY_DELTA}</arg>
+<status status="PASS" start="2024-03-24T17:38:52.799524" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2024-03-24T17:38:52.799524" level="INFO">Length is 0.</msg>
+<arg>${result}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="PASS" start="2024-03-24T17:38:52.799524" elapsed="0.000000"/>
+</kw>
+<doc>*Description:*
+    Verify that difference between min and max salary in [hr].[jobs] not more then 20000.</doc>
+<tag>Jobs</tag>
+<tag>Salary</tag>
+<tag>Validity checks</tag>
+<status status="PASS" start="2024-03-24T17:38:52.799524" elapsed="0.000000"/>
+</test>
+<test id="s1-t5" name="Check that each depatrment has emploee in [hr].[departments]" line="53">
+<kw name="Execute Sql Query" owner="CustomFunctions">
+<msg time="2024-03-24T17:38:52.816333" level="INFO">${result} = []</msg>
+<var>${result}</var>
+<arg>${cursor}</arg>
+<arg>${HR_DEPART_IN_EACH_EXIST_EMPLOYEE}</arg>
+<status status="PASS" start="2024-03-24T17:38:52.815283" elapsed="0.001050"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2024-03-24T17:38:52.816826" level="INFO">Length is 0.</msg>
+<arg>${result}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="PASS" start="2024-03-24T17:38:52.816826" elapsed="0.000000"/>
+</kw>
+<doc>*Description:*
+    Verify that each depatrment has emploee.</doc>
+<tag>Completeness checks</tag>
+<tag>Departments</tag>
+<status status="PASS" start="2024-03-24T17:38:52.799524" elapsed="0.017302"/>
+</test>
+<test id="s1-t6" name="Check that all location id from dim [hr].[departments] present in location dimension" line="62">
+<kw name="Execute Sql Query" owner="CustomFunctions">
+<msg time="2024-03-24T17:38:52.818823" level="INFO">${result} = []</msg>
+<var>${result}</var>
+<arg>${cursor}</arg>
+<arg>${HR_DEPART_COMPLITNES_WITH_LOCATION}</arg>
+<status status="PASS" start="2024-03-24T17:38:52.817826" elapsed="0.000997"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2024-03-24T17:38:52.818823" level="INFO">Length is 0.</msg>
+<arg>${result}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="PASS" start="2024-03-24T17:38:52.818823" elapsed="0.000000"/>
+</kw>
+<doc>*Description:*
+   Verify that all location id from [hr].[departments] present in [hr].[locations].</doc>
+<tag>Completeness checks</tag>
+<tag>Departments</tag>
+<tag>Location</tag>
+<status status="PASS" start="2024-03-24T17:38:52.817826" elapsed="0.000997"/>
+</test>
+<status status="PASS" start="2024-03-24T17:38:52.716867" elapsed="0.103042"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Compleatnes</stat>
+<stat pass="2" fail="0" skip="0">Completeness checks</stat>
+<stat pass="2" fail="0" skip="0">Departments</stat>
+<stat pass="2" fail="0" skip="0">Jobs</stat>
+<stat pass="1" fail="0" skip="0">Location</stat>
+<stat pass="1" fail="0" skip="0">NULL values</stat>
+<stat pass="2" fail="0" skip="0">Salary</stat>
+<stat pass="1" fail="0" skip="0">Uniqueness; Employees</stat>
+<stat pass="1" fail="0" skip="0">Validity</stat>
+<stat pass="1" fail="0" skip="0">Validity checks</stat>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="Main Part">Main Part</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
