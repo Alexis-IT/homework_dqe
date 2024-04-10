@@ -5,14 +5,16 @@ pipeline {
         stage('Check QA Branch') {
             steps {
                 script {
-                    def qaBranchExists = sh(script: 'git show-ref --verify --quiet refs/heads/qa', returnStatus: true) == 0
-                    if (!qaBranchExists) {
-                        sh 'git checkout -b qa'
-                        sh 'git push origin qa'
-                        sh 'git status'
+                        def qaBranchExists = sh(script: 'git show-ref --verify --quiet refs/heads/qa', returnStatus: true) == 0
+                        if (!qaBranchExists) {
+                            echo 'Створення гілки qa...'
+                            sh 'git checkout -b qa'
+                            sh 'git push origin qa'
+                            sh 'git status'
+                        } else {
+                            echo 'Гілка qa вже існує.'
+                        }
                     }
-                }
-            }
         }
          stage('Merge Changes 1') {
             steps {
