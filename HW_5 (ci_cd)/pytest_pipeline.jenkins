@@ -15,7 +15,7 @@ pipeline {
    stage('run tests') {
             steps {
 		            echo 'Pytest running'
-		            sh 'pytest test_cases.py'
+		            sh 'pytest HW_5 (ci_cd)/test_cases.jenkins'
                 }
             }
    stage('Finish') {
