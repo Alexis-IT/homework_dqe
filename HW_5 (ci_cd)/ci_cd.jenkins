@@ -9,6 +9,7 @@ pipeline {
                     if (!qaBranchExists) {
                         sh 'git checkout -b qa'
                         sh 'git push origin qa'
+                        sh 'git status'
                     }
                 }
             }
