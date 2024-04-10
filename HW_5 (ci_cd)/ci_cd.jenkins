@@ -13,11 +13,17 @@ pipeline {
                 }
             }
         }
-        stage('Merge Changes') {
+         stage('Merge Changes 1') {
             steps {
                 script {
                     sh 'git checkout qa'
                     sh 'git merge development'
+                }
+            }
+        }
+        stage('Merge Changes 2') {
+            steps {
+                script {
                     sh 'git push origin qa'
                     sh 'git log --oneline -n 5'
                 }
