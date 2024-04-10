@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     sh 'git checkout qa'
-                    sh 'git merge development'
+                    sh 'git merge origin/development'
                 }
             }
         }
