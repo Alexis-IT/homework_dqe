@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Check QA Branch') {
             steps {
@@ -15,6 +14,7 @@ pipeline {
                             echo 'Гілка qa вже існує.'
                         }
                     }
+                }
         }
          stage('Merge Changes 1') {
             steps {
