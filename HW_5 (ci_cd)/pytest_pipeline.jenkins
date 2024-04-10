@@ -1,0 +1,27 @@
+pipeline {
+        agent any
+    stages {
+	stage('Build') {
+                	steps {
+	                    echo 'Start build pipeline'
+                }
+            }
+	stage('check pytest version') {
+            steps {
+		            echo 'Pytest version'
+		            sh 'pytest --version'
+                }
+            }	
+   stage('run tests') {
+            steps {
+		            echo 'Pytest running'
+		            sh 'pytest test_cases.py'
+                }
+            }
+        }
+    stage('Finish') {
+        steps {
+                echo 'Finish'
+            }
+        }
+}
