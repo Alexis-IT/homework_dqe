@@ -4,7 +4,7 @@ pipeline {
         stage('Check QA Branch') {
             steps {
                 script {
-                        def qaBranchExists = sh(script: 'git show-ref --verify --quiet refs/heads/qa', returnStatus: true)
+                        def qaBranchExists = sh(script: 'git show-ref --verify --quiet refs/heads/qa', returnStatus: true) == 0
                         if (!qaBranchExists) {
                             sh 'git branch --list'
                             echo 'Створення гілки qa...'
