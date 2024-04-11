@@ -1,17 +1,24 @@
 pipeline {
     agent any
+
     environment {
-        FOR_QA_DIR = 'for_qa_folder'
+        GIT_REPO = 'https://github.com/Alexis-IT/homework_dqe/HW_5 (ci_cd).git'
+        QA_DIR = 'qa_dir'
     }
     stages {
-        stage('Copy to for_qa Directory') {
+        stage('Clone QA Repository') {
             steps {
                 script {
-                    // copy into for_qa
-                    sh "mkdir -p ${env.FOR_QA_DIR}"
-                    sh "cp -r *  ${env.FOR_QA_DIR}"
-                    sh "cd for_qa_folder"
-                    sh "cd dir"
+                    git branch: 'development', url: env.GIT_REPO
+                }
+            }
+        }
+
+        stage('Copy to qa_dir Directory') {
+            steps {
+                script {
+                    sh "mkdir -p ${env.QA_DIR}"
+                    sh "cp -r 'HW_5 (ci_cd)/* ${env.QA_DIR}/'"
                 }
             }
         }
