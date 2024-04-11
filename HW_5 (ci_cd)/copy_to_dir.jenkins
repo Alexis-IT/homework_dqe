@@ -1,17 +1,17 @@
 pipeline {
     agent any
-
     environment {
-        SOURCE_BRANCH = 'development'
-        DESTINATION_FOLDER = '/dir_for_qa'
+        FOR_QA_DIR = 'for_qa_folder'
     }
-
     stages {
-        stage('Copy Code') {
+        stage('Copy to for_qa Directory') {
             steps {
                 script {
-                    sh "mkdir -p $DESTINATION_FOLDER"
-                    sh "cp -r * $DESTINATION_FOLDER"
+                    // copy into for_qa
+                    sh "mkdir -p ${env.FOR_QA_DIR}"
+                    sh "cp -r *  ${env.FOR_QA_DIR}"
+                    sh "cd for_qa_folder"
+                    sh "cd dir"
                 }
             }
         }
