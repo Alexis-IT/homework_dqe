@@ -11,10 +11,19 @@ pipeline {
 		            echo 'Pytest version'
 		            sh 'pytest --version'
                 }
-            }	
+            }
+   stage('Check Current Directory') {
+            steps {
+                script {
+                    def currentDirectory = pwd()
+                    echo "current: ${currentDirectory}"
+                }
+            }
+        }
    stage('run tests') {
             steps {
 		            echo 'Pytest running'
+		            sh 'pytest "HW_5 (ci_cd)/test_cases.py"'
 		            sh 'pytest test_cases.py'
                 }
             }
