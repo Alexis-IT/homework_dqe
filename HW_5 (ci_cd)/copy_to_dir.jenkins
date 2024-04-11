@@ -5,21 +5,18 @@ pipeline {
         GIT_REPO = 'https://github.com/Alexis-IT/homework_dqe.git'
         QA_DIR = 'qa_dir'
     }
+
     stages {
-        stage('Clone QA Repository') {
+        stage('Clone Repository') {
             steps {
-                script {
-                    git branch: 'development', url: env.GIT_REPO
-                }
+                git branch: 'development', url: env.GIT_REPO
             }
         }
 
-        stage('Copy to qa_dir Directory') {
+        stage('Copy Files to qa_dir') {
             steps {
-                script {
-                    sh "mkdir -p ${env.QA_DIR}"
-                    sh "rsync -av --exclude='qa_dir' ./ ${env.QA_DIR}/"
-                }
+                sh "mkdir -p ${env.QA_DIR}"
+                sh "cp -r * ${env.QA_DIR}/"
             }
         }
     }
