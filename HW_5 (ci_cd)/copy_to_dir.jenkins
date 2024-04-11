@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    environment {
+        GIT_REPO = 'https://github.com/Alexis-IT/homework_dqe.git'
+        QA_DIR = 'qa_dir'
+    }
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git branch: 'development', url: env.GIT_REPO
+            }
+        }
+
+        stage('Copy Files to qa_dir') {
+            steps {
+                sh "mkdir -p ${env.QA_DIR}"
+                sh "cp -r * ${env.QA_DIR}/"
+            }
+        }
+    }
+}

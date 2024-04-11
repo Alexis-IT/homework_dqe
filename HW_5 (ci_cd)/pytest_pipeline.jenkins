@@ -1,0 +1,35 @@
+pipeline {
+        agent any
+    stages {
+    	stage('Build') {
+                	steps {
+	                    echo 'Start build pipeline'
+                }
+            }
+	stage('check pytest version') {
+            steps {
+		            echo 'Pytest version'
+		            sh 'pytest --version'
+                }
+            }
+   stage('Check Current Directory') {
+            steps {
+                script {
+                    def currentDirectory = pwd()
+                    echo "current: ${currentDirectory}"
+                }
+            }
+        }
+   stage('run tests') {
+            steps {
+		            echo 'Pytest running'
+		            sh 'pytest "HW_5 (ci_cd)/test_cases.py"'
+                }
+            }
+   stage('Finish') {
+       steps {
+               echo 'Finish'
+           }
+       }
+   }
+}

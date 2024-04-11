@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+    stages {
+        stage('Check QA Branch') {
+            steps {
+                script {
+                        def qaBranchExists = sh(script: 'git show-ref --verify --quiet refs/heads/qa', returnStatus: true) == 0
+                        if (!qaBranchExists) {
+                            sh 'git branch --list'
+                            echo 'Creating qa...'
+                            sh 'git checkout -b qa'
+                            sh 'git push origin qa'
+                            sh 'git status'
+                        } else {
+                            echo 'Branch already exist'
+                        }
+                    }
+                }
+        }
+         stage('Merge Changes 1') {
+            steps {
+                script {
+                    sh 'git checkout qa'
+                    sh 'git merge origin/development'
+                }
+            }
+        }
+        stage('Merge Changes 2') {
+            steps {
+                script {
+                    sh 'git push origin qa'
+                    sh 'git log --oneline -n 5'
+                }
+            }
+        }
+    }
+}
