@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        SOURCE_BRANCH = 'main'
+        SOURCE_BRANCH = 'development'
         DESTINATION_FOLDER = '/dir_for_qa'
     }
 
