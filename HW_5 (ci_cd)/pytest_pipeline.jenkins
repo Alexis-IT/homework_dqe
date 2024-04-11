@@ -24,7 +24,6 @@ pipeline {
             steps {
 		            echo 'Pytest running'
 		            sh 'pytest "HW_5 (ci_cd)/test_cases.py"'
-		            sh 'pytest test_cases.py'
                 }
             }
    stage('Finish') {
