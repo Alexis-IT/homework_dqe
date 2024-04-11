@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     sh "mkdir -p ${env.QA_DIR}"
-                    sh "cp -r '* ${env.QA_DIR}/'"
+                    sh "cp -r * ${env.QA_DIR}/"
                 }
             }
         }
