@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GIT_REPO = 'https://github.com/Alexis-IT/homework_dqe/HW_5 (ci_cd).git'
+        GIT_REPO = 'https://github.com/Alexis-IT/homework_dqe.git'
         QA_DIR = 'qa_dir'
     }
     stages {
@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     sh "mkdir -p ${env.QA_DIR}"
-                    sh "cp -r 'HW_5 (ci_cd)/* ${env.QA_DIR}/'"
+                    sh "cp -r '* ${env.QA_DIR}/'"
                 }
             }
         }
