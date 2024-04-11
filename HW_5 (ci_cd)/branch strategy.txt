@@ -1,0 +1,20 @@
+In HW5 used Git Flow merging strategy.
+
+It includes three main branches: 
+development 
+- stores history for all commits; 
+- developers create feature branches from the "development" branch to work on new features or changes;
+- after completing their work, developers merge their feature branches back into the "development" branch.
+
+test 
+- developers can push their changes to the "qa" branch for thorough testing before merging them into the main branch.This helps ensure that the code changes meet the required quality standards 
+- stage for testing changes before they are merged into the main branch;
+- once testing is complete and the changes are verified, they are merged into the "main" branch for release.
+
+
+main 
+- the latest stable version of the project
+- merging into the "main" branch should only happen after thorough testing and code review; 
+
+
+In addition to these main branches, developers can create feature branches for individual features or bug fixes. These feature branches are typically short-lived and are merged back into the "development" branch once the work is complete.
