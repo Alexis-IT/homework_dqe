@@ -26,14 +26,16 @@ RUN apt-get update --yes && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # If spark_version is not set, latest stable Spark will be installed
-ARG spark_version="3.5.1"
-ARG hadoop_version="3"
+ARG spark_version="3.2.0"
+ARG hadoop_version="3.2"
 # If scala_version is not set, Spark without Scala will be installed
 ARG scala_version
 # URL to use for Spark downloads
 # You need to use https://archive.apache.org/dist/spark/ website if you want to download old Spark versions
 # But it seems to be slower, that's why we use the recommended site for download
-ARG spark_download_url="https://dlcdn.apache.org/spark/"
+#ARG spark_download_url="https://dlcdn.apache.org/spark/"
+ARG spark_download_url="https://archive.apache.org/dist/spark/"
+
 
 ENV SPARK_HOME=/usr/local/spark
 ENV PATH="${PATH}:${SPARK_HOME}/bin"
@@ -58,6 +60,10 @@ COPY setup_spark.py /opt/setup-scripts/
 RUN chmod +x /opt/setup-scripts/setup_spark.py
 
 RUN ls -la /opt/setup-scripts/
+
+
+# RUN curl -O https://archive.apache.org/dist/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2.tgz
+# RUN tar -tzf spark-3.1.2-bin-hadoop3.2.tgz
 
 # Setup Spark
 RUN /opt/setup-scripts/setup_spark.py \
