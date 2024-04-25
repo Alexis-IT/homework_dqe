@@ -1,0 +1,6 @@
+,check,check_level,check_status,constraint,constraint_status,constraint_message
+0,Review Check,Warning,Warning,"CompletenessConstraint(Completeness(email,None))",Success,
+1,Review Check,Warning,Warning,"CompletenessConstraint(Completeness(salary,None))",Success,
+2,Review Check,Warning,Warning,"UniquenessConstraint(Uniqueness(List(employee_id),None))",Success,
+3,Review Check,Warning,Warning,"MaximumConstraint(Maximum(employee_id,None))",Failure,Value: 206.0 does not meet the constraint requirement!
+4,Review Check,Warning,Warning,"ComplianceConstraint(Compliance(salary is non-negative,COALESCE(CAST(salary AS DECIMAL(20,10)), 0.0) >= 0,None))",Success,
