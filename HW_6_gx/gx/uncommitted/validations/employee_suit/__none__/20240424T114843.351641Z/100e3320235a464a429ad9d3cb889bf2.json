@@ -1,0 +1,120 @@
+{
+  "evaluation_parameters": {},
+  "meta": {
+    "active_batch_definition": {
+      "batch_identifiers": {},
+      "data_asset_name": "employees",
+      "data_connector_name": "default_configured_data_connector_name",
+      "datasource_name": "my_datasource"
+    },
+    "batch_markers": {
+      "ge_load_time": "20240424T114843.368226Z"
+    },
+    "batch_spec": {
+      "batch_identifiers": {},
+      "class_name": "Asset",
+      "data_asset_name": "employees",
+      "module_name": "great_expectations.datasource.data_connector.asset",
+      "schema_name": "hr",
+      "sorters": {},
+      "table_name": "employees",
+      "type": null
+    },
+    "checkpoint_id": null,
+    "checkpoint_name": "employees_employee_suit",
+    "expectation_suite_name": "employee_suit",
+    "great_expectations_version": "0.18.12",
+    "run_id": {
+      "run_name": null,
+      "run_time": "2024-04-24T13:48:43.351641+02:00"
+    },
+    "validation_id": null,
+    "validation_time": "20240424T114843.373898Z"
+  },
+  "results": [
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_table_row_count_to_be_between",
+        "kwargs": {
+          "batch_id": "100e3320235a464a429ad9d3cb889bf2",
+          "max_value": 40,
+          "min_value": 40
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {},
+              "metric_name": "table.row_count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 40
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_table_columns_to_match_set",
+        "kwargs": {
+          "batch_id": "100e3320235a464a429ad9d3cb889bf2",
+          "column_set": [
+            "department_id",
+            "employee_id",
+            "salary",
+            "email",
+            "hire_date",
+            "phone_number",
+            "manager_id",
+            "job_id",
+            "first_name",
+            "last_name"
+          ],
+          "exact_match": null
+        },
+        "meta": {
+          "profiler_details": {
+            "success_ratio": 1.0
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": [
+          "employee_id",
+          "first_name",
+          "last_name",
+          "email",
+          "phone_number",
+          "hire_date",
+          "job_id",
+          "salary",
+          "manager_id",
+          "department_id"
+        ]
+      },
+      "success": true
+    }
+  ],
+  "statistics": {
+    "evaluated_expectations": 2,
+    "success_percent": 100.0,
+    "successful_expectations": 2,
+    "unsuccessful_expectations": 0
+  },
+  "success": true
+}

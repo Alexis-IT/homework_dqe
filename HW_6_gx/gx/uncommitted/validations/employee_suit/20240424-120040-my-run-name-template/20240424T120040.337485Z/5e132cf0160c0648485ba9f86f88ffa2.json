@@ -1,0 +1,287 @@
+{
+  "evaluation_parameters": {},
+  "meta": {
+    "active_batch_definition": {
+      "batch_identifiers": {},
+      "data_asset_name": "hr.employees",
+      "data_connector_name": "default_inferred_data_connector_name",
+      "datasource_name": "my_datasource"
+    },
+    "batch_markers": {
+      "ge_load_time": "20240424T120040.378187Z"
+    },
+    "batch_spec": {
+      "batch_identifiers": {},
+      "data_asset_name": "hr.employees",
+      "data_asset_name_prefix": "",
+      "data_asset_name_suffix": "",
+      "include_schema_name": true,
+      "schema_name": "hr",
+      "table_name": "employees",
+      "type": "table"
+    },
+    "checkpoint_id": null,
+    "checkpoint_name": "employee_checkpoint",
+    "expectation_suite_name": "employee_suit",
+    "great_expectations_version": "0.18.12",
+    "run_id": {
+      "run_name": "20240424-120040-my-run-name-template",
+      "run_time": "2024-04-24T14:00:40.337485+02:00"
+    },
+    "validation_id": null,
+    "validation_time": "20240424T120040.381656Z"
+  },
+  "results": [
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_table_row_count_to_be_between",
+        "kwargs": {
+          "batch_id": "5e132cf0160c0648485ba9f86f88ffa2",
+          "max_value": 40,
+          "min_value": 40
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 40
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_table_columns_to_match_set",
+        "kwargs": {
+          "batch_id": "5e132cf0160c0648485ba9f86f88ffa2",
+          "column_set": [
+            "employee_id",
+            "first_name",
+            "last_name",
+            "email",
+            "phone_number",
+            "hire_date",
+            "job_id",
+            "salary",
+            "manager_id",
+            "department_id"
+          ]
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "observed_value": [
+          "employee_id",
+          "first_name",
+          "last_name",
+          "email",
+          "phone_number",
+          "hire_date",
+          "job_id",
+          "salary",
+          "manager_id",
+          "department_id"
+        ]
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "5e132cf0160c0648485ba9f86f88ffa2",
+          "column": "employee_id"
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 40,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_unique",
+        "kwargs": {
+          "batch_id": "5e132cf0160c0648485ba9f86f88ffa2",
+          "column": "employee_id"
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 40,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_unique",
+        "kwargs": {
+          "batch_id": "5e132cf0160c0648485ba9f86f88ffa2",
+          "column": "email"
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 40,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "5e132cf0160c0648485ba9f86f88ffa2",
+          "column": "salary",
+          "max_value": 25000,
+          "min_value": 2000
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 40,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_mean_to_be_between",
+        "kwargs": {
+          "batch_id": "5e132cf0160c0648485ba9f86f88ffa2",
+          "column": "salary",
+          "max_value": 8100,
+          "min_value": 8000
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 8060.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "batch_id": "5e132cf0160c0648485ba9f86f88ffa2",
+          "column": "job_id",
+          "value_set": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 40,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    }
+  ],
+  "statistics": {
+    "evaluated_expectations": 8,
+    "success_percent": 100.0,
+    "successful_expectations": 8,
+    "unsuccessful_expectations": 0
+  },
+  "success": true
+}

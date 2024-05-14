@@ -1,0 +1,285 @@
+{
+  "evaluation_parameters": {},
+  "meta": {
+    "active_batch_definition": {
+      "batch_identifiers": {},
+      "data_asset_name": "hr.countries",
+      "data_connector_name": "default_inferred_data_connector_name",
+      "datasource_name": "my_datasource"
+    },
+    "batch_markers": {
+      "ge_load_time": "20240424T115624.464464Z"
+    },
+    "batch_spec": {
+      "batch_identifiers": {},
+      "data_asset_name": "hr.countries",
+      "data_asset_name_prefix": "",
+      "data_asset_name_suffix": "",
+      "include_schema_name": true,
+      "schema_name": "hr",
+      "table_name": "countries",
+      "type": "table"
+    },
+    "checkpoint_id": null,
+    "checkpoint_name": "employee_checkpoint",
+    "expectation_suite_name": "employee_suit",
+    "great_expectations_version": "0.18.12",
+    "run_id": {
+      "run_name": "20240424-115624-my-run-name-template",
+      "run_time": "2024-04-24T13:56:24.422146+02:00"
+    },
+    "validation_id": null,
+    "validation_time": "20240424T115624.468641Z"
+  },
+  "results": [
+    {
+      "exception_info": {
+        "('column_values.nonnull.condition', '411f4e66ca78792f430c89e3f71d3da7', ())": {
+          "exception_message": "Error: The column \"employee_id\" in BatchData does not exist.",
+          "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 548, in _process_direct_and_bundled_metric_computation_configurations\n    ] = metric_computation_configuration.metric_fn(  # type: ignore[misc] # F not callable\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\metric_provider.py\", line 100, in inner_func\n    return metric_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\map_metric_provider\\column_condition_partial.py\", line 169, in inner_func\n    metric_domain_kwargs = get_dbms_compatible_metric_domain_kwargs(\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 703, in get_dbms_compatible_metric_domain_kwargs\n    column_name: str | sqlalchemy.quoted_name = get_dbms_compatible_column_names(\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 777, in get_dbms_compatible_column_names\n    _verify_column_names_exist_and_get_normalized_typed_column_names_map(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 873, in _verify_column_names_exist_and_get_normalized_typed_column_names_map\n    raise gx_exceptions.InvalidMetricAccessorDomainKwargsKeyError(\ngreat_expectations.exceptions.exceptions.InvalidMetricAccessorDomainKwargsKeyError: Error: The column \"employee_id\" in BatchData does not exist.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\validator\\validation_graph.py\", line 269, in _resolve\n    self._execution_engine.resolve_metrics(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 283, in resolve_metrics\n    return self._process_direct_and_bundled_metric_computation_configurations(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 552, in _process_direct_and_bundled_metric_computation_configurations\n    raise gx_exceptions.MetricResolutionError(\ngreat_expectations.exceptions.exceptions.MetricResolutionError: Error: The column \"employee_id\" in BatchData does not exist.\n",
+          "raised_exception": true
+        }
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "5a7567ca7ab0d1fec8ac472586b934b6",
+          "column": "employee_id"
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {},
+      "success": false
+    },
+    {
+      "exception_info": {
+        "('column_values.nonnull.condition', '411f4e66ca78792f430c89e3f71d3da7', ())": {
+          "exception_message": "Error: The column \"employee_id\" in BatchData does not exist.",
+          "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 548, in _process_direct_and_bundled_metric_computation_configurations\n    ] = metric_computation_configuration.metric_fn(  # type: ignore[misc] # F not callable\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\metric_provider.py\", line 100, in inner_func\n    return metric_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\map_metric_provider\\column_condition_partial.py\", line 169, in inner_func\n    metric_domain_kwargs = get_dbms_compatible_metric_domain_kwargs(\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 703, in get_dbms_compatible_metric_domain_kwargs\n    column_name: str | sqlalchemy.quoted_name = get_dbms_compatible_column_names(\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 777, in get_dbms_compatible_column_names\n    _verify_column_names_exist_and_get_normalized_typed_column_names_map(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 873, in _verify_column_names_exist_and_get_normalized_typed_column_names_map\n    raise gx_exceptions.InvalidMetricAccessorDomainKwargsKeyError(\ngreat_expectations.exceptions.exceptions.InvalidMetricAccessorDomainKwargsKeyError: Error: The column \"employee_id\" in BatchData does not exist.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\validator\\validation_graph.py\", line 269, in _resolve\n    self._execution_engine.resolve_metrics(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 283, in resolve_metrics\n    return self._process_direct_and_bundled_metric_computation_configurations(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 552, in _process_direct_and_bundled_metric_computation_configurations\n    raise gx_exceptions.MetricResolutionError(\ngreat_expectations.exceptions.exceptions.MetricResolutionError: Error: The column \"employee_id\" in BatchData does not exist.\n",
+          "raised_exception": true
+        },
+        "('column_values.unique.condition', '411f4e66ca78792f430c89e3f71d3da7', ())": {
+          "exception_message": "Error: The column \"employee_id\" in BatchData does not exist.",
+          "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 548, in _process_direct_and_bundled_metric_computation_configurations\n    ] = metric_computation_configuration.metric_fn(  # type: ignore[misc] # F not callable\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\metric_provider.py\", line 100, in inner_func\n    return metric_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\map_metric_provider\\column_condition_partial.py\", line 169, in inner_func\n    metric_domain_kwargs = get_dbms_compatible_metric_domain_kwargs(\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 703, in get_dbms_compatible_metric_domain_kwargs\n    column_name: str | sqlalchemy.quoted_name = get_dbms_compatible_column_names(\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 777, in get_dbms_compatible_column_names\n    _verify_column_names_exist_and_get_normalized_typed_column_names_map(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 873, in _verify_column_names_exist_and_get_normalized_typed_column_names_map\n    raise gx_exceptions.InvalidMetricAccessorDomainKwargsKeyError(\ngreat_expectations.exceptions.exceptions.InvalidMetricAccessorDomainKwargsKeyError: Error: The column \"employee_id\" in BatchData does not exist.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\validator\\validation_graph.py\", line 269, in _resolve\n    self._execution_engine.resolve_metrics(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 283, in resolve_metrics\n    return self._process_direct_and_bundled_metric_computation_configurations(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 552, in _process_direct_and_bundled_metric_computation_configurations\n    raise gx_exceptions.MetricResolutionError(\ngreat_expectations.exceptions.exceptions.MetricResolutionError: Error: The column \"employee_id\" in BatchData does not exist.\n",
+          "raised_exception": true
+        }
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_unique",
+        "kwargs": {
+          "batch_id": "5a7567ca7ab0d1fec8ac472586b934b6",
+          "column": "employee_id"
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {},
+      "success": false
+    },
+    {
+      "exception_info": {
+        "('column_values.nonnull.condition', '3a4c9fc0469d93eacfadd62119593423', ())": {
+          "exception_message": "Error: The column \"email\" in BatchData does not exist.",
+          "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 548, in _process_direct_and_bundled_metric_computation_configurations\n    ] = metric_computation_configuration.metric_fn(  # type: ignore[misc] # F not callable\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\metric_provider.py\", line 100, in inner_func\n    return metric_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\map_metric_provider\\column_condition_partial.py\", line 169, in inner_func\n    metric_domain_kwargs = get_dbms_compatible_metric_domain_kwargs(\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 703, in get_dbms_compatible_metric_domain_kwargs\n    column_name: str | sqlalchemy.quoted_name = get_dbms_compatible_column_names(\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 777, in get_dbms_compatible_column_names\n    _verify_column_names_exist_and_get_normalized_typed_column_names_map(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 873, in _verify_column_names_exist_and_get_normalized_typed_column_names_map\n    raise gx_exceptions.InvalidMetricAccessorDomainKwargsKeyError(\ngreat_expectations.exceptions.exceptions.InvalidMetricAccessorDomainKwargsKeyError: Error: The column \"email\" in BatchData does not exist.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\validator\\validation_graph.py\", line 269, in _resolve\n    self._execution_engine.resolve_metrics(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 283, in resolve_metrics\n    return self._process_direct_and_bundled_metric_computation_configurations(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 552, in _process_direct_and_bundled_metric_computation_configurations\n    raise gx_exceptions.MetricResolutionError(\ngreat_expectations.exceptions.exceptions.MetricResolutionError: Error: The column \"email\" in BatchData does not exist.\n",
+          "raised_exception": true
+        },
+        "('column_values.unique.condition', '3a4c9fc0469d93eacfadd62119593423', ())": {
+          "exception_message": "Error: The column \"email\" in BatchData does not exist.",
+          "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 548, in _process_direct_and_bundled_metric_computation_configurations\n    ] = metric_computation_configuration.metric_fn(  # type: ignore[misc] # F not callable\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\metric_provider.py\", line 100, in inner_func\n    return metric_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\map_metric_provider\\column_condition_partial.py\", line 169, in inner_func\n    metric_domain_kwargs = get_dbms_compatible_metric_domain_kwargs(\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 703, in get_dbms_compatible_metric_domain_kwargs\n    column_name: str | sqlalchemy.quoted_name = get_dbms_compatible_column_names(\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 777, in get_dbms_compatible_column_names\n    _verify_column_names_exist_and_get_normalized_typed_column_names_map(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 873, in _verify_column_names_exist_and_get_normalized_typed_column_names_map\n    raise gx_exceptions.InvalidMetricAccessorDomainKwargsKeyError(\ngreat_expectations.exceptions.exceptions.InvalidMetricAccessorDomainKwargsKeyError: Error: The column \"email\" in BatchData does not exist.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\validator\\validation_graph.py\", line 269, in _resolve\n    self._execution_engine.resolve_metrics(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 283, in resolve_metrics\n    return self._process_direct_and_bundled_metric_computation_configurations(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 552, in _process_direct_and_bundled_metric_computation_configurations\n    raise gx_exceptions.MetricResolutionError(\ngreat_expectations.exceptions.exceptions.MetricResolutionError: Error: The column \"email\" in BatchData does not exist.\n",
+          "raised_exception": true
+        }
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_unique",
+        "kwargs": {
+          "batch_id": "5a7567ca7ab0d1fec8ac472586b934b6",
+          "column": "email"
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {},
+      "success": false
+    },
+    {
+      "exception_info": {
+        "('column_values.between.condition', 'bf4dc9de9d34326dde04057e7704d703', '1acebf203186776b6bf8b79a87eaf785')": {
+          "exception_message": "Error: The column \"salary\" in BatchData does not exist.",
+          "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 548, in _process_direct_and_bundled_metric_computation_configurations\n    ] = metric_computation_configuration.metric_fn(  # type: ignore[misc] # F not callable\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\metric_provider.py\", line 100, in inner_func\n    return metric_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\map_metric_provider\\column_condition_partial.py\", line 169, in inner_func\n    metric_domain_kwargs = get_dbms_compatible_metric_domain_kwargs(\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 703, in get_dbms_compatible_metric_domain_kwargs\n    column_name: str | sqlalchemy.quoted_name = get_dbms_compatible_column_names(\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 777, in get_dbms_compatible_column_names\n    _verify_column_names_exist_and_get_normalized_typed_column_names_map(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 873, in _verify_column_names_exist_and_get_normalized_typed_column_names_map\n    raise gx_exceptions.InvalidMetricAccessorDomainKwargsKeyError(\ngreat_expectations.exceptions.exceptions.InvalidMetricAccessorDomainKwargsKeyError: Error: The column \"salary\" in BatchData does not exist.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\validator\\validation_graph.py\", line 269, in _resolve\n    self._execution_engine.resolve_metrics(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 283, in resolve_metrics\n    return self._process_direct_and_bundled_metric_computation_configurations(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 552, in _process_direct_and_bundled_metric_computation_configurations\n    raise gx_exceptions.MetricResolutionError(\ngreat_expectations.exceptions.exceptions.MetricResolutionError: Error: The column \"salary\" in BatchData does not exist.\n",
+          "raised_exception": true
+        },
+        "('column_values.nonnull.condition', 'bf4dc9de9d34326dde04057e7704d703', ())": {
+          "exception_message": "Error: The column \"salary\" in BatchData does not exist.",
+          "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 548, in _process_direct_and_bundled_metric_computation_configurations\n    ] = metric_computation_configuration.metric_fn(  # type: ignore[misc] # F not callable\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\metric_provider.py\", line 100, in inner_func\n    return metric_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\map_metric_provider\\column_condition_partial.py\", line 169, in inner_func\n    metric_domain_kwargs = get_dbms_compatible_metric_domain_kwargs(\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 703, in get_dbms_compatible_metric_domain_kwargs\n    column_name: str | sqlalchemy.quoted_name = get_dbms_compatible_column_names(\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 777, in get_dbms_compatible_column_names\n    _verify_column_names_exist_and_get_normalized_typed_column_names_map(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 873, in _verify_column_names_exist_and_get_normalized_typed_column_names_map\n    raise gx_exceptions.InvalidMetricAccessorDomainKwargsKeyError(\ngreat_expectations.exceptions.exceptions.InvalidMetricAccessorDomainKwargsKeyError: Error: The column \"salary\" in BatchData does not exist.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\validator\\validation_graph.py\", line 269, in _resolve\n    self._execution_engine.resolve_metrics(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 283, in resolve_metrics\n    return self._process_direct_and_bundled_metric_computation_configurations(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 552, in _process_direct_and_bundled_metric_computation_configurations\n    raise gx_exceptions.MetricResolutionError(\ngreat_expectations.exceptions.exceptions.MetricResolutionError: Error: The column \"salary\" in BatchData does not exist.\n",
+          "raised_exception": true
+        }
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "5a7567ca7ab0d1fec8ac472586b934b6",
+          "column": "salary",
+          "max_value": 25000,
+          "min_value": 2000
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {},
+      "success": false
+    },
+    {
+      "exception_info": {
+        "('column.mean.aggregate_fn', 'bf4dc9de9d34326dde04057e7704d703', ())": {
+          "exception_message": "Error: The column \"salary\" in BatchData does not exist.",
+          "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 548, in _process_direct_and_bundled_metric_computation_configurations\n    ] = metric_computation_configuration.metric_fn(  # type: ignore[misc] # F not callable\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\metric_provider.py\", line 100, in inner_func\n    return metric_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\column_aggregate_metric_provider.py\", line 151, in inner_func\n    metric_domain_kwargs = get_dbms_compatible_metric_domain_kwargs(\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 703, in get_dbms_compatible_metric_domain_kwargs\n    column_name: str | sqlalchemy.quoted_name = get_dbms_compatible_column_names(\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 777, in get_dbms_compatible_column_names\n    _verify_column_names_exist_and_get_normalized_typed_column_names_map(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 873, in _verify_column_names_exist_and_get_normalized_typed_column_names_map\n    raise gx_exceptions.InvalidMetricAccessorDomainKwargsKeyError(\ngreat_expectations.exceptions.exceptions.InvalidMetricAccessorDomainKwargsKeyError: Error: The column \"salary\" in BatchData does not exist.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\validator\\validation_graph.py\", line 269, in _resolve\n    self._execution_engine.resolve_metrics(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 283, in resolve_metrics\n    return self._process_direct_and_bundled_metric_computation_configurations(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 552, in _process_direct_and_bundled_metric_computation_configurations\n    raise gx_exceptions.MetricResolutionError(\ngreat_expectations.exceptions.exceptions.MetricResolutionError: Error: The column \"salary\" in BatchData does not exist.\n",
+          "raised_exception": true
+        }
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_mean_to_be_between",
+        "kwargs": {
+          "batch_id": "5a7567ca7ab0d1fec8ac472586b934b6",
+          "column": "salary",
+          "max_value": 8100,
+          "min_value": 8000
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {},
+      "success": false
+    },
+    {
+      "exception_info": {
+        "('column_values.in_set.condition', '6c19e48236ef88fb9d1ccead1d3a4922', '78adb87ae18adb410d89f106e449a8bc')": {
+          "exception_message": "Error: The column \"job_id\" in BatchData does not exist.",
+          "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 548, in _process_direct_and_bundled_metric_computation_configurations\n    ] = metric_computation_configuration.metric_fn(  # type: ignore[misc] # F not callable\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\metric_provider.py\", line 100, in inner_func\n    return metric_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\map_metric_provider\\column_condition_partial.py\", line 169, in inner_func\n    metric_domain_kwargs = get_dbms_compatible_metric_domain_kwargs(\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 703, in get_dbms_compatible_metric_domain_kwargs\n    column_name: str | sqlalchemy.quoted_name = get_dbms_compatible_column_names(\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 777, in get_dbms_compatible_column_names\n    _verify_column_names_exist_and_get_normalized_typed_column_names_map(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 873, in _verify_column_names_exist_and_get_normalized_typed_column_names_map\n    raise gx_exceptions.InvalidMetricAccessorDomainKwargsKeyError(\ngreat_expectations.exceptions.exceptions.InvalidMetricAccessorDomainKwargsKeyError: Error: The column \"job_id\" in BatchData does not exist.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\validator\\validation_graph.py\", line 269, in _resolve\n    self._execution_engine.resolve_metrics(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 283, in resolve_metrics\n    return self._process_direct_and_bundled_metric_computation_configurations(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 552, in _process_direct_and_bundled_metric_computation_configurations\n    raise gx_exceptions.MetricResolutionError(\ngreat_expectations.exceptions.exceptions.MetricResolutionError: Error: The column \"job_id\" in BatchData does not exist.\n",
+          "raised_exception": true
+        },
+        "('column_values.nonnull.condition', '6c19e48236ef88fb9d1ccead1d3a4922', ())": {
+          "exception_message": "Error: The column \"job_id\" in BatchData does not exist.",
+          "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 548, in _process_direct_and_bundled_metric_computation_configurations\n    ] = metric_computation_configuration.metric_fn(  # type: ignore[misc] # F not callable\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\metric_provider.py\", line 100, in inner_func\n    return metric_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\map_metric_provider\\column_condition_partial.py\", line 169, in inner_func\n    metric_domain_kwargs = get_dbms_compatible_metric_domain_kwargs(\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 703, in get_dbms_compatible_metric_domain_kwargs\n    column_name: str | sqlalchemy.quoted_name = get_dbms_compatible_column_names(\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 777, in get_dbms_compatible_column_names\n    _verify_column_names_exist_and_get_normalized_typed_column_names_map(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 873, in _verify_column_names_exist_and_get_normalized_typed_column_names_map\n    raise gx_exceptions.InvalidMetricAccessorDomainKwargsKeyError(\ngreat_expectations.exceptions.exceptions.InvalidMetricAccessorDomainKwargsKeyError: Error: The column \"job_id\" in BatchData does not exist.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\validator\\validation_graph.py\", line 269, in _resolve\n    self._execution_engine.resolve_metrics(\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 283, in resolve_metrics\n    return self._process_direct_and_bundled_metric_computation_configurations(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Oleksandra_Bereza\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 552, in _process_direct_and_bundled_metric_computation_configurations\n    raise gx_exceptions.MetricResolutionError(\ngreat_expectations.exceptions.exceptions.MetricResolutionError: Error: The column \"job_id\" in BatchData does not exist.\n",
+          "raised_exception": true
+        }
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "batch_id": "5a7567ca7ab0d1fec8ac472586b934b6",
+          "column": "job_id",
+          "value_set": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {},
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_table_row_count_to_be_between",
+        "kwargs": {
+          "batch_id": "5a7567ca7ab0d1fec8ac472586b934b6",
+          "max_value": 40,
+          "min_value": 40
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 25
+      },
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_table_columns_to_match_set",
+        "kwargs": {
+          "batch_id": "5a7567ca7ab0d1fec8ac472586b934b6",
+          "column_set": [
+            "employee_id",
+            "first_name",
+            "last_name",
+            "email",
+            "phone_number",
+            "hire_date",
+            "job_id",
+            "salary",
+            "manager_id",
+            "department_id"
+          ]
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "details": {
+          "mismatched": {
+            "missing": [
+              "department_id",
+              "email",
+              "employee_id",
+              "first_name",
+              "hire_date",
+              "job_id",
+              "last_name",
+              "manager_id",
+              "phone_number",
+              "salary"
+            ],
+            "unexpected": [
+              "country_id",
+              "country_name",
+              "region_id"
+            ]
+          }
+        },
+        "observed_value": [
+          "country_id",
+          "country_name",
+          "region_id"
+        ]
+      },
+      "success": false
+    }
+  ],
+  "statistics": {
+    "evaluated_expectations": 8,
+    "success_percent": 0.0,
+    "successful_expectations": 0,
+    "unsuccessful_expectations": 8
+  },
+  "success": false
+}
